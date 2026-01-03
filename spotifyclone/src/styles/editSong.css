@@ -1,0 +1,123 @@
+.edit-container {
+    padding: 20px;
+}
+
+.edit-box {
+    background: #181818;
+    padding: 25px;
+    width: 500px;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+.edit-box input {
+    width: 100%;
+    margin-top: 5px;
+    padding: 10px;
+    background: #222;
+    border: 1px solid #333;
+    color: white;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.save-btn {
+    background: #1db954;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.edit-audio {
+    width: 260px;
+    border-radius: 8px;
+    margin: 10px auto;
+    display: block;
+}
+
+.edit-row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 15px 0;
+}
+
+.edit-row img {
+    width: 140px;
+    height: 100px;
+    border-radius: 8px;
+}
+
+.edit-label-small {
+    font-size: 14px;
+    color: #bbb;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    display: block;
+}
+
+@media (max-width: 480px) {
+    .edit-container {
+        padding: 10px;
+    }
+
+    .edit-container h1 {
+        font-size: 14px;
+    }
+
+    .edit-box {
+        background: #181818;
+        padding: 7px;
+        width: 250px;
+        border-radius: 4px;
+        margin-top: 5px;
+    }
+
+    .edit-box label {
+        font-size: 12px;
+    }
+
+    .edit-box input {
+        padding: 5px;
+        font-size: 11px;
+        border-radius: 4px;
+        margin-bottom: 10px;
+    }
+
+    .save-btn {
+        padding: 8px;
+        width: 50%;
+        margin-left: 60px;
+        font-size: 12px;
+        border-radius: 4px;
+    }
+
+    .edit-audio {
+        height: 40px;
+        width: 300px;
+        border-radius: 4px;
+        margin: 5px auto;
+    }
+
+    .edit-row {
+        margin: 8px 0;
+    }
+
+    .edit-row img {
+        width: 80px;
+        height: 50px;
+        border-radius: 5px;
+    }
+
+    .edit-label-small {
+        font-size: 10px;
+        color: #bbb;
+        margin-bottom: 5px;
+        margin-top: 5px;
+        display: block;
+    }
+}

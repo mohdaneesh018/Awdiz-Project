@@ -1,0 +1,129 @@
+.playlistPage {
+    padding: 24px 32px;
+    color: #fff;
+    min-height: 100vh;
+}
+
+.playlistPage h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.playlistPage p {
+    color: #b3b3b3;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.emptyPlaylist {
+    margin-top: 40px;
+    padding: 40px;
+    border-radius: 10px;
+    background: #181818;
+    text-align: center;
+}
+
+.emptyPlaylist p {
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+
+.emptyPlaylist button {
+    background: #1db954;
+    color: #000;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.emptyPlaylist button:hover {
+    background: #1ed760;
+}
+
+.songRows {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #b3b3b3;
+}
+
+.songRows:hover {
+    background: #1a1a1a;
+    color: white;
+}
+
+.songRows.activeSong {
+    background-color: rgba(30, 215, 96, 0.15);
+}
+
+.songRows.activeSong span {
+    color: #1db954;
+    font-weight: 500;
+}
+
+.songIndex {
+    width: 20px;
+}
+
+.songTitle {
+    font-size: 15px;
+    font-weight: 500;
+    color: white;
+    padding-left: 20px;
+    flex: 1;
+    text-align: left;
+}
+
+.songDuration {
+    width: 50px;
+    text-align: right;
+    font-size: 14px;
+}
+
+.playlistPlayBtn {
+    background-color: #1db954;
+    color: black;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 15px 0;
+    font-weight: bold;
+}
+
+.playlistPlayBtn:hover {
+    transform: scale(1.05);
+}
+
+.addSongBtn {
+    background: transparent;
+    border: 1px solid #b3b3b3;
+    color: white;
+    padding: 8px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 15px 0;
+    font-size: 14px;
+}
+
+.addSongBtn:hover {
+    border-color: white;
+    transform: scale(1.03);
+}
+
+.deleteSong {
+    margin-left: 15px;
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.deleteSong:hover {
+    opacity: 1;
+    color: red;
+}

@@ -1,0 +1,71 @@
+.songPage {
+    padding: 50px;
+    color: #fff; 
+    border: 1px solid yellow;
+}
+
+.songHeader {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.songImage {
+    width: 260px;
+    height: 260px;
+    border-radius: 10px;
+}
+
+.songInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.songType {
+    color: #b3b3b3;
+    font-size: 14px;
+}
+
+.songTitle {
+    font-size: 55px;
+    font-weight: 800;
+}
+
+.songArtist {
+    font-size: 18px;
+    color: #ccc;
+}
+
+.songLikes {
+    margin-bottom: 20px;
+    color: #b3b3b3;
+}
+
+.playBtn {
+    background-color: #1db954;
+    width: 200px !important;
+    height: 55px;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    cursor: pointer;
+    border: none;
+}
+
+.progressBar {
+    width: 90%;
+    height: 6px;
+    margin-top: 40px;
+    accent-color: #1db954;
+}
+
+.volumeSlider {
+    width: 200px;
+    accent-color: red;
+}
+
+.volumeBox {
+    margin-top: 25px;
+}

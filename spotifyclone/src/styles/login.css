@@ -1,0 +1,160 @@
+body {
+  margin: 0;
+  background-color: #121212;
+  font-family: "Circular Std", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.login-container {
+  background-color: #121212;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+  color: white;
+}
+
+.login-box {
+  width: 300px;
+  text-align: center;
+}
+
+.login-box img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-top: 30px;
+  margin-bottom: 0px;
+  padding: 0;
+}
+
+.login-title {
+  font-size: 43px;
+  font-weight: bolder;
+  margin: 0 0 30px 0;
+}
+
+.label {
+  display: block;
+  text-align: left;
+  font-size: 14px;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.input {
+  width: 100%;
+  padding: 12px;
+  background: #121212;
+  border: 1px solid #555;
+  border-radius: 5px;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.continue-btn {
+  margin-top: 10px;
+  width: 100%;
+  padding: 12px;
+  background-color: #1db954;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  color: #121212;
+}
+
+.or {
+  margin: 15px 0;
+  font-size: 14px;
+  color: #ccc;
+  font-weight: bold;
+}
+
+.google-btn,
+.apple-btn {
+  width: 80%;
+  height: 50px;
+  padding: 12px;
+  background-color: transparent;
+  border: 1px solid #555;
+  border-radius: 25px;
+  color: white;
+  font-size: 15px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  margin: auto;
+  margin-top: 10px;
+}
+
+.google-btn img,
+.apple-btn img {
+  width: 25px;
+  display: inline-block;
+  height: 25px;
+  margin-bottom: 25px;
+}
+
+.social-btn {
+  width: 100%;
+  padding: 12px;
+  background: transparent;
+  border: 1px solid #555;
+  border-radius: 25px;
+  margin-bottom: 12px;
+  color: white;
+  font-size: 15px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 50px;
+  cursor: pointer;
+}
+
+.social-btn img {
+  width: 25px;
+  height: 25px;
+  border-radius: 10px;
+}
+
+.icon {
+  width: 20px;
+}
+
+.no-account {
+  margin-top: 25px;
+  color: gray;
+  font-size: 14px;
+}
+
+.signup-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #121212;
+  outline: none;
+  border: none;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 25px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.footer-note {
+  font-size: 12px;
+  color: gray;
+  line-height: 18px;
+}
+
+.footer-note a {
+  color: #1db954;
+  text-decoration: none;
+}
+
+.footer-note a:hover {
+  text-decoration: underline;
+}

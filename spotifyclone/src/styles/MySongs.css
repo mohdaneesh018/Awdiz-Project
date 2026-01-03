@@ -1,0 +1,238 @@
+.mysongs-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px; 
+}
+
+.mysongs-title {
+  color: white;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.mysongs-tools {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.mysongs-search {
+  padding: 10px 12px;
+  background: #222;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  width: 400px;
+}
+
+.mysongs-sort {
+  padding: 10px 12px;
+  background: #222;
+  border: none;
+  border-radius: 8px;
+  color: white;
+}
+
+.songs-table {
+  width: 100%;
+  margin-top: 25px;
+  background-color: #181818;
+  color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  border-collapse: collapse;
+}
+
+.songs-table th {
+  padding: 15px;
+  background: #111;
+  text-align: center;
+  font-weight: 600;
+  color: #ddd;
+  border-bottom: 1px solid #232323;
+}
+
+.songs-table td {
+  padding: 16px;
+  border-bottom: 1px solid #232323;
+  vertical-align: middle;
+}
+
+.songs-table tr {
+  position: relative;
+}
+
+.songs-table tr:hover {
+  background: #232323;
+}
+
+.song-cover {
+  width: 55px;
+  height: 55px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.song-audio {
+  width: 220px !important;
+  position: relative;
+  z-index: 1;
+}
+
+.song-date {
+  color: #bbb;
+  font-size: 14px;
+}
+
+.song-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  height: 102px;
+  position: relative;
+  z-index: 5;
+}
+
+.like-btn {
+  padding: 6px 12px;
+  background: #ff004c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  position: relative;
+  z-index: 10;
+}
+
+.like-btn:hover {
+  background: #d40040;
+}
+
+.edit-btn {
+  padding: 7px 14px;
+  background-color: #1db954;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+  font-weight: 600;
+}
+
+.edit-btn:hover {
+  background-color: #18a748;
+}
+
+.delete-btn {
+  padding: 7px 14px;
+  background-color: #ff3b3b;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+  font-weight: 600;
+}
+
+.delete-btn:hover {
+  background-color: #d63232;
+}
+
+.song-title {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+@media (max-width: 480px) {
+  .mysongs-header {
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+
+  .mysongs-title {
+    font-size: 16px;
+  }
+
+  .mysongs-tools {
+    align-items: center;
+    gap: 15px;
+  }
+
+  .mysongs-search {
+    padding: 5px 6px;
+    border-radius: 5px;
+    width: 200px;
+  }
+
+  .mysongs-sort {
+    padding: 5px 6px;
+    border-radius: 4px;
+  }
+
+  .songs-table {
+    margin-top: 12px;
+    border-radius: 6px;
+  }
+
+  .songs-table th {
+    padding: 10px;
+  }
+
+  .songs-table td {
+    padding: 8px;
+  }
+
+  .songs-table tr {
+    position: relative;
+  }
+
+  .song-cover {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+  }
+
+  .song-audio {
+    width: 220px !important;
+    position: relative;
+    z-index: 1;
+  }
+
+  .audio-play audio { 
+    height: 40px; 
+  }
+
+  .song-date {
+    color: #bbb;
+    font-size: 10px;
+  }
+
+  .song-actions {
+    gap: 5px;
+    height: 102px;
+  }
+
+  .like-btn {
+    padding: 3px 6px;
+    border-radius: 4px;
+    width: 50px;
+  }
+
+  .edit-btn {
+    padding: 4px 7px;
+    border-radius: 4px;
+  }
+
+  .delete-btn {
+    padding: 4px 7px;
+    border-radius: 4px;
+  } 
+
+  .song-title {
+    font-size: 13px;   
+  }
+}

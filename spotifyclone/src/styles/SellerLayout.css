@@ -1,0 +1,186 @@
+.seller-container {
+  display: flex;
+  height: 100vh;
+  background-color: #121212;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.seller-sidebar {
+  width: 230px;
+  background-color: #000;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  font-size: 24px;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.sidebar-link {
+  color: #b3b3b3;
+  margin: 15px 0;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.sidebar-link:hover {
+  color: white;
+}
+
+.seller-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.seller-navbar {
+  height: 60px;
+  background-color: #181818;
+  padding: 15px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.profile-btn {
+  background-color: #1db954;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.profile-btn:hover {
+  background-color: #17a64a;
+}
+
+.seller-content {
+  padding: 30px;
+  overflow-y: auto;
+}
+
+.nav-right {
+  position: relative;
+}
+
+.profile-dropdown {
+  position: absolute;
+  right: 0;
+  top: 50px;
+  background: #181818;
+  width: 170px;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 0 10px #0008;
+  z-index: 99;
+}
+
+.profile-dropdown p {
+  padding: 8px;
+  margin: 5px 0;
+  color: #ccc;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+.profile-dropdown p:hover {
+  background: #222;
+  color: #fff;
+}
+
+.logout-btn {
+  color: #ff4d4d !important;
+  font-weight: 600;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-box {
+  background: #181818;
+  padding: 25px;
+  width: 350px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 0 15px #000;
+}
+
+.modal-box h3 {
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+.modal-actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cancel-btn {
+  background: #333;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+}
+
+.logout-confirm-btn {
+  background: #e63946;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+}
+
+.logout-confirm-btn:hover {
+  background: #d62828;
+}
+
+@media (max-width: 480px) {
+
+  .logo {
+    font-size: 13px;
+    width: 90px;
+  }
+
+  .sidebar-link {
+    margin: 10px 0;
+    font-size: 12px;
+  }
+
+  .seller-navbar {
+    height: 40px;
+    padding: 15px 12px;
+  }
+
+  .profile-btn {
+    padding: 5px 10px;
+    border-radius: 10px;
+  }
+
+  .seller-content {
+    padding: 5px 10px;
+  }
+
+  .nav-right {
+    position: relative;
+  }
+}

@@ -1,0 +1,105 @@
+.radioPage {
+  padding: 32px;
+  color: #fff;
+  min-height: 100vh;
+  background: linear-gradient(to bottom,
+      #2a2a2a 0%,
+      #121212 40%);
+}
+
+.radioHeader {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 30px;
+}
+
+.radioImage {
+  width: 260px;
+  height: 260px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+}
+
+.radioInfo h2 {
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.radioInfo p {
+  color: #b3b3b3;
+  font-size: 14px;
+}
+
+.radioSongTitle {
+  margin-top: 20px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.radioLikes {
+  margin-top: 6px;
+  color: #1db954;
+  font-weight: 500;
+}
+
+.radioPlayer {
+  margin-top: 25px;
+  width: 100%;
+  max-width: 420px;
+}
+
+audio {
+  width: 100%;
+  outline: none;
+  border-radius: 8px;
+}
+
+@media (max-width: 480px) {
+
+  .radioPage {
+    padding: 30px;
+    padding-bottom: 100px;
+    overflow-y: auto;
+  }
+
+  .radioPage .radioHeader {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .radioPage .radioImage {
+    width: 150px;
+    height: 150px;
+    border-radius: 12px;
+  }
+
+  .radioPage .radioInfo {
+    text-align: center;
+  }
+
+  .radioPage .radioInfo h2 {
+    font-size: 20px;
+    margin-bottom: 6px;
+  }
+
+  .radioPage .radioInfo p {
+    font-size: 12px;
+  }
+
+  .radioPage .radioSongTitle {
+    font-size: 18px;
+    text-align: center;
+    margin-top: 18px;
+  }
+
+  .radioPage .radioLikes {
+    font-size: 13px;
+    text-align: center;
+    margin-top: 6px;
+  }
+}
