@@ -3,7 +3,7 @@ import SellerLayout from "../pages/SellerLayout";
 import "../styles/MySongs.css";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
-import api from "../utils/AxiosInstance";
+import api from "../utils/axiosInstance";
 
 const MySongs = () => {
   const [songs, setSongs] = useState([]);

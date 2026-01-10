@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../styles/SellerLayout.css";
-import api from "../utils/AxiosInstance";
+import api from "../utils/axiosInstance";
 
 const SellerLayout = ({ children }) => {
   const [open, setOpen] = useState(false);

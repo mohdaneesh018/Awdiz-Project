@@ -3,7 +3,7 @@ import { useContext, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/Cart.css"; 
 import { AudioContext } from "../context/AudioContext";
-import api from "../utils/AxiosInstance";
+import api from "../utils/axiosInstance";
 
 export default function Cart() {
     const { id } = useParams();

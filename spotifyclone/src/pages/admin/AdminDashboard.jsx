@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"; 
 import "./AdminDashboard.css";
-import api from "../../utils/AxiosInstance";
+import api from "../../utils/axiosInstance";
 
 const AdminDashboard = () => {
     const [songs, setSongs] = useState([]);

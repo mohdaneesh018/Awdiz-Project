@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react"; 
 import "../styles/style.css";
 import AddToPlaylistModal from "../components/AddToPlaylistModal";
-import api from "../utils/AxiosInstance";
+import api from "../utils/axiosInstance";
 
 export default function Home() {
     const [songs, setSongs] = useState([]);

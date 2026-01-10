@@ -4,7 +4,7 @@ import "../styles/playlist.css";
 import AddToPlaylistModal from "../components/AddToPlaylistModal";
 import { AudioContext } from "../context/AudioContext";
 import toast from "react-hot-toast";
-import api from "../utils/AxiosInstance";
+import api from "../utils/axiosInstance";
 
 const formatDuration = (seconds) => {
     if (!seconds) return "0:00";

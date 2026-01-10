@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../styles/register.css";
 import { Link, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
-import api from "../utils/AxiosInstance";
+import api from "../utils/axiosInstance";
 
 const Register = () => {
     const [form, setForm] = useState({

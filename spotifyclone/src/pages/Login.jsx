@@ -2,7 +2,7 @@ import { useState } from "react";
 import "../styles/login.css";
 import { Link, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
-import api from "../utils/AxiosInstance";
+import api from "../utils/axiosInstance";
 
 const Login = () => {
   const [form, setForm] = useState({

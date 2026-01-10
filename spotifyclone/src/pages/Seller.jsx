@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import { useContext, useEffect, useState } from "react"; 
 import { AudioContext } from "../context/AudioContext";
 import "../styles/Seller.css"
-import api from "../utils/AxiosInstance";
+import api from "../utils/axiosInstance";
 
 export default function Seller() {
     const { sellerId } = useParams();

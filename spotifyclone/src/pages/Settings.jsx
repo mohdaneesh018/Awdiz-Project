@@ -2,7 +2,7 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import SellerLayout from "./SellerLayout";
 import { useNavigate } from "react-router-dom"; 
-import api from "../utils/AxiosInstance";
+import api from "../utils/axiosInstance";
 
 const Settings = () => {
     const [oldPassword, setOld] = useState("");

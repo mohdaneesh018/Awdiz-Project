@@ -3,7 +3,7 @@ import SellerLayout from "../pages/SellerLayout";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import "../styles/uploadSong.css";
-import api from "../utils/AxiosInstance";
+import api from "../utils/axiosInstance";
 
 const UploadSong = () => {
   const [title, setTitle] = useState("");

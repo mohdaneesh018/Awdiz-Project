@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react"; 
+import { useEffect, useState } from "react";
 import player from "../player";
 import "../styles/SongDetail.css";
-import api from "../utils/AxiosInstance";
+import api from "../utils/axiosInstance";
 
 export default function SongDetail() {
     const { id } = useParams();

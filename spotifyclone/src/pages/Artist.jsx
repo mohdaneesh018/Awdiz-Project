@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState, useContext } from "react"; 
 import { AudioContext } from "../context/AudioContext";
 import "../styles/Artist.css";
-import api from "../utils/AxiosInstance";
+import api from "../utils/axiosInstance";
 
 export default function Artist() {
     const { id } = useParams();

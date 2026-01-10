@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import "../styles/addToPlaylistModal.css";
-import api from "../utils/AxiosInstance";
+import api from "../utils/axiosInstance";
 
 export default function AddToPlaylistModal({
     playlistId,

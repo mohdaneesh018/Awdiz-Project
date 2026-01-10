@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import SellerLayout from "../pages/SellerLayout";
 import "../styles/dashboard.css";
-import api from "../utils/AxiosInstance";
+import api from "../utils/axiosInstance";
 
 const SellerDashboard = () => {
 

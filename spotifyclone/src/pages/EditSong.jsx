@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import SellerLayout from "./SellerLayout";
 import toast from "react-hot-toast";
 import "../styles/editSong.css";
-import api from "../utils/AxiosInstance";
+import api from "../utils/axiosInstance";
 
 const EditSong = () => {
   const { id } = useParams();

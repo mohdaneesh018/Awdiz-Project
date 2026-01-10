@@ -3,7 +3,7 @@ import SellerLayout from "./SellerLayout";
 import toast from "react-hot-toast";
 import "../styles/profile.css";
 import { useNavigate } from "react-router-dom";
-import api from "../utils/AxiosInstance";
+import api from "../utils/axiosInstance";
 
 const Profile = () => {
     const [user, setUser] = useState(null);
