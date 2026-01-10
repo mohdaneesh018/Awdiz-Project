@@ -1,8 +1,8 @@
 import { Link, useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useEffect, useState } from "react"; 
 import "../styles/style.css";
 import AddToPlaylistModal from "../components/AddToPlaylistModal";
+import api from "../utils/AxiosInstance";
 
 export default function Home() {
     const [songs, setSongs] = useState([]);
@@ -48,8 +48,8 @@ export default function Home() {
         const name = prompt("Enter playlist name");
         if (!name) return;
 
-        const res = await axios.post(
-            "http://localhost:3000/api/playlists/create",
+        const res = await api.post(
+            "/playlists/create",
             { name }
         );
 
@@ -64,8 +64,8 @@ export default function Home() {
         if (!confirmDelete) return;
 
         try {
-            await axios.delete(
-                `http://localhost:3000/api/playlists/delete/${playlistId}`
+            await api.delete(
+                `/playlists/delete/${playlistId}`
             );
 
             setPlaylists(prev =>
@@ -77,7 +77,7 @@ export default function Home() {
     };
 
     useEffect(() => {
-        axios.get("http://localhost:3000/api/songs/get-songs")
+        api.get("/songs/get-songs")
             .then(res => {
                 setSongs(res.data);
                 setAllSongs(res.data);
@@ -86,19 +86,19 @@ export default function Home() {
     }, []);
 
     useEffect(() => {
-        axios.get("http://localhost:3000/api/songs/get-albums")
+        api.get("/songs/get-albums")
             .then(res => setAlbums(res.data))
             .catch(err => console.log(err));
     }, []);
 
     useEffect(() => {
-        axios.get("http://localhost:3000/api/songs/popular-radio")
+        api.get("/songs/popular-radio")
             .then(res => setRadio(res.data))
             .catch(err => console.log(err));
     }, []);
 
     useEffect(() => {
-        axios.get("http://localhost:3000/api/playlists")
+        api.get("/playlists")
             .then(res => setPlaylists(res.data))
             .catch(err => console.log(err));
     }, []);
@@ -112,8 +112,8 @@ export default function Home() {
 
         const fetchSongs = async () => {
             try {
-                const res = await axios.get(
-                    "http://localhost:3000/api/songs/get-songs"
+                const res = await api.get(
+                    "/songs/get-songs"
                 );
 
                 const filtered = res.data.filter(song =>

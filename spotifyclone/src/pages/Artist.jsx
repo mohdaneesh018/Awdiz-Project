@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom";
-import { useEffect, useState, useContext } from "react";
-import axios from "axios";
+import { useEffect, useState, useContext } from "react"; 
 import { AudioContext } from "../context/AudioContext";
 import "../styles/Artist.css";
+import api from "../utils/AxiosInstance";
 
 export default function Artist() {
     const { id } = useParams();
@@ -20,9 +20,8 @@ export default function Artist() {
 
     useEffect(() => {
         setLoading(true);
-
-        axios
-            .get(`http://localhost:3000/api/artists/${id}`)
+        api
+            .get(`/artists/${id}`)
             .then(res => {
                 setArtist(res.data);
                 setLoading(false);

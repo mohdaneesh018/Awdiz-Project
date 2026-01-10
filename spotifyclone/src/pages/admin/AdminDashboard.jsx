@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useEffect, useState } from "react"; 
 import "./AdminDashboard.css";
+import api from "../../utils/AxiosInstance";
 
 const AdminDashboard = () => {
     const [songs, setSongs] = useState([]);
@@ -13,16 +13,16 @@ const AdminDashboard = () => {
     }, []);
 
     const fetchData = async () => {
-        const songRes = await axios.get(
-            "http://localhost:3000/api/admin/songs",
+        const songRes = await api.get(
+            "/admin/songs",
             { withCredentials: true }
         );
-        const artistRes = await axios.get(
-            "http://localhost:3000/api/admin/artists",
+        const artistRes = await api.get(
+            "/admin/artists",
             { withCredentials: true }
         );
-        const sellerRes = await axios.get(
-            "http://localhost:3000/api/admin/sellers",
+        const sellerRes = await api.get(
+            "/admin/sellers",
             { withCredentials: true }
         );
 
@@ -32,24 +32,24 @@ const AdminDashboard = () => {
     };
 
     const deleteSong = async (id) => {
-        await axios.delete(
-            `http://localhost:3000/api/admin/song/${id}`,
+        await api.delete(
+            `/admin/song/${id}`,
             { withCredentials: true }
         );
         fetchData();
     };
 
     const deleteArtist = async (id) => {
-        await axios.delete(
-            `http://localhost:3000/api/admin/artist/${id}`,
+        await api.delete(
+            `/admin/artist/${id}`,
             { withCredentials: true }
         );
         fetchData();
     };
 
     const deleteSeller = async (id) => {
-        await axios.delete(
-            `http://localhost:3000/api/admin/seller/${id}`,
+        await api.delete(
+            `/admin/seller/${id}`,
             { withCredentials: true }
         );
         fetchData();

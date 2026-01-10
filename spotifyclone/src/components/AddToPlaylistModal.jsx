@@ -1,8 +1,8 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import "../styles/addToPlaylistModal.css";
+import api from "../utils/AxiosInstance";
 
 export default function AddToPlaylistModal({
     playlistId,
@@ -14,12 +14,12 @@ export default function AddToPlaylistModal({
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios
-            .get("http://localhost:3000/api/songs/get-songs")
+        api
+            .get("/songs/get-songs")
             .then(res => setSongs(res.data));
 
-        axios
-            .get(`http://localhost:3000/api/playlists/${playlistId}`)
+        api
+            .get(`/playlists/${playlistId}`)
             .then(res => {
                 const ids = res.data.songs.map(song => song._id);
                 setPlaylistSongs(ids);
@@ -28,8 +28,8 @@ export default function AddToPlaylistModal({
 
     const addSong = async (songId) => {
         try {
-            await axios.post(
-                `http://localhost:3000/api/playlists/${playlistId}/add/${songId}`
+            await api.post(
+                `/playlists/${playlistId}/add/${songId}`
             );
 
             toast.success("Song added to playlist");

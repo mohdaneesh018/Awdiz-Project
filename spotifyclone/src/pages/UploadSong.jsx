@@ -1,9 +1,9 @@
-import { useState } from "react";
-import axios from "axios";
+import { useState } from "react"; 
 import SellerLayout from "../pages/SellerLayout";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import "../styles/uploadSong.css";
+import api from "../utils/AxiosInstance";
 
 const UploadSong = () => {
   const [title, setTitle] = useState("");
@@ -29,8 +29,8 @@ const UploadSong = () => {
     try {
       setLoading(true);
 
-      await axios.post(
-        "http://localhost:3000/api/seller/upload-song",
+      await api.post(
+        "/seller/upload-song",
         formData,
         { withCredentials: true }
       );

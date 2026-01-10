@@ -1,8 +1,8 @@
-import { useState } from "react";
-import axios from "axios";
+import { useState } from "react"; 
 import "../styles/login.css";
 import { Link, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
+import api from "../utils/AxiosInstance";
 
 const Login = () => {
   const [form, setForm] = useState({
@@ -18,8 +18,8 @@ const Login = () => {
 
   const handleSubmit = async () => {
     try {
-      const res = await axios.post(
-        "http://localhost:3000/api/auth/login",
+      const res = await api.post(
+        "/auth/login",
         form,
         { withCredentials: true }
       );

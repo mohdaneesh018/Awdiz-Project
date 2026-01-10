@@ -1,13 +1,13 @@
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useEffect, useState } from "react"; 
+import api from "../utils/AxiosInstance";
 
 export default function SearchResults() {
     const { query } = useParams();
     const [songs, setSongs] = useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:3000/api/songs")
+        api.get("/songs")
             .then(res => {
                 const filtered = res.data.filter(song =>
                     song.title.toLowerCase().includes(query.toLowerCase())

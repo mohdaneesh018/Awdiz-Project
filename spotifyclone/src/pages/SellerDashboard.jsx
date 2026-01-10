@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import { useNavigate } from "react-router-dom"; 
 import toast from "react-hot-toast";
 import SellerLayout from "../pages/SellerLayout";
 import "../styles/dashboard.css";
+import api from "../utils/AxiosInstance";
 
 const SellerDashboard = () => {
 
@@ -13,7 +13,7 @@ const SellerDashboard = () => {
 
 
   const fetchSongs = async () => {
-    const res = await axios.get("http://localhost:3000/api/seller/my-songs", {
+    const res = await api.get("/seller/my-songs", {
       withCredentials: true,
     });
 
@@ -22,8 +22,8 @@ const SellerDashboard = () => {
 
   const fetchUser = async () => {
     try {
-      const res = await axios.get(
-        "http://localhost:3000/api/auth/me",
+      const res = await api.get(
+        "/auth/me",
         { withCredentials: true }
       );
       setUser(res.data.user);
@@ -56,8 +56,8 @@ const SellerDashboard = () => {
 
   const handleLogout = async () => {
     try {
-      await axios.post(
-        "http://localhost:3000/api/auth/logout",
+      await api.post(
+        "/auth/logout",
         {},
         { withCredentials: true }
       );

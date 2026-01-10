@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom";
-import { useContext, useEffect, useState } from "react";
-import axios from "axios";
+import { useContext, useEffect, useState } from "react"; 
 import "../styles/Radio.css";
 import { AudioContext } from "../context/AudioContext";
+import api from "../utils/AxiosInstance";
 
 export default function Radio() {
     const { sellerId } = useParams();
@@ -16,8 +16,8 @@ export default function Radio() {
     } = useContext(AudioContext);
 
     useEffect(() => {
-        axios
-            .get(`http://localhost:3000/api/songs/radio/${sellerId}`)
+        api
+            .get(`/songs/radio/${sellerId}`)
             .then((res) => {
                 setRadioData(res.data);
                 setPlaylist([]);

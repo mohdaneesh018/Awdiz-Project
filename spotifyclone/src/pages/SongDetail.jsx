@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useEffect, useState } from "react"; 
 import player from "../player";
 import "../styles/SongDetail.css";
+import api from "../utils/AxiosInstance";
 
 export default function SongDetail() {
     const { id } = useParams();
@@ -13,7 +13,7 @@ export default function SongDetail() {
     const [isPlaying, setIsPlaying] = useState(false);
 
     useEffect(() => {
-        axios.get(`http://localhost:3000/api/seller/get-song/${id}`)
+        api.get(`/seller/get-song/${id}`)
             .then(res => setSong(res.data))
             .catch(err => console.log(err));
     }, [id]);

@@ -1,10 +1,10 @@
 import { useNavigate, useParams } from "react-router-dom";
-import { useContext, useEffect, useState } from "react";
-import axios from "axios";
+import { useContext, useEffect, useState } from "react"; 
 import "../styles/playlist.css";
 import AddToPlaylistModal from "../components/AddToPlaylistModal";
 import { AudioContext } from "../context/AudioContext";
 import toast from "react-hot-toast";
+import api from "../utils/AxiosInstance";
 
 const formatDuration = (seconds) => {
     if (!seconds) return "0:00";
@@ -32,8 +32,8 @@ export default function Playlist() {
 
     const fetchPlaylist = async () => {
         try {
-            const res = await axios.get(
-                `http://localhost:3000/api/playlists/${id}`
+            const res = await api.get(
+                `/playlists/${id}`
             );
             setPlaylist(res.data);
         } catch (err) {
@@ -47,8 +47,8 @@ export default function Playlist() {
 
     const removePlaylistSong = async (songId) => {
         try {
-            await axios.delete(
-                `http://localhost:3000/api/playlists/${playlist._id}/remove/${songId}`
+            await api.delete(
+                `/playlists/${playlist._id}/remove/${songId}`
             );
 
             toast.success("Song removed from playlist");

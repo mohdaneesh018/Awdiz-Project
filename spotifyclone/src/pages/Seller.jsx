@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom";
-import { useContext, useEffect, useState } from "react";
-import axios from "axios";
+import { useContext, useEffect, useState } from "react"; 
 import { AudioContext } from "../context/AudioContext";
 import "../styles/Seller.css"
+import api from "../utils/AxiosInstance";
 
 export default function Seller() {
     const { sellerId } = useParams();
@@ -23,8 +23,8 @@ export default function Seller() {
     };
 
     useEffect(() => {
-        axios
-            .get(`http://localhost:3000/api/songs/seller/${sellerId}`)
+        api
+            .get(`/songs/seller/${sellerId}`)
             .then(res => {
                 setSongs(res.data.songs);
                 setSellerName(res.data.sellerName);

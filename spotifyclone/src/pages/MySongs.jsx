@@ -1,9 +1,9 @@
-import { useEffect, useRef, useState } from "react";
-import axios from "axios";
+import { useEffect, useRef, useState } from "react"; 
 import SellerLayout from "../pages/SellerLayout";
 import "../styles/MySongs.css";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import api from "../utils/AxiosInstance";
 
 const MySongs = () => {
   const [songs, setSongs] = useState([]);
@@ -15,7 +15,7 @@ const MySongs = () => {
 
   const fetchSongs = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/seller/my-songs", {
+      const res = await api.get("/seller/my-songs", {
         withCredentials: true,
       });
       setSongs(res.data.songs);
@@ -26,8 +26,8 @@ const MySongs = () => {
 
   const likeSong = async (id) => {
     try {
-      await axios.put(
-        `http://localhost:3000/api/songs/like/${id}`
+      await api.put(
+        `/songs/like/${id}`
       );
       fetchSongs();
     } catch (err) {
@@ -42,7 +42,7 @@ const MySongs = () => {
 
   const deleteSong = async (id) => {
     try {
-      await axios.delete(`http://localhost:3000/api/seller/delete-song/${id}`, {
+      await api.delete(`/seller/delete-song/${id}`, {
         withCredentials: true,
       });
       toast.success("Song deleted");
@@ -139,8 +139,8 @@ const MySongs = () => {
                   ref={(el) => (audioRefs.current[song._id] = el)}
                   onPlay={() => {
                     handlePlay(song._id);
-                    axios.put(
-                      `http://localhost:3000/api/seller/increase-play/${song._id}`,
+                    api.put(
+                      `/seller/increase-play/${song._id}`,
                       {},
                       { withCredentials: true }
                     );

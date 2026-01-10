@@ -1,9 +1,9 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useContext, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import "../styles/Cart.css";
-import axios from "axios";
+import "../styles/Cart.css"; 
 import { AudioContext } from "../context/AudioContext";
+import api from "../utils/AxiosInstance";
 
 export default function Cart() {
     const { id } = useParams();
@@ -38,8 +38,8 @@ export default function Cart() {
 
     const handleHeaderLike = async () => {
         try {
-            const res = await axios.put(
-                `http://localhost:3000/api/songs/like/${song._id}`
+            const res = await api.put(
+                `/songs/like/${song._id}`
             );
 
             setSong(prev => ({
@@ -73,8 +73,8 @@ export default function Cart() {
         const name = prompt("Enter playlist name");
         if (!name) return;
 
-        const res = await axios.post(
-            "http://localhost:3000/api/playlists/create",
+        const res = await api.post(
+            "/playlists/create",
             { name }
         );
 
@@ -89,8 +89,8 @@ export default function Cart() {
         if (!confirmDelete) return;
 
         try {
-            await axios.delete(
-                `http://localhost:3000/api/playlists/delete/${playlistId}`
+            await api.delete(
+                `/playlists/delete/${playlistId}`
             );
 
             setPlaylists(prev =>
@@ -113,7 +113,7 @@ export default function Cart() {
 
         const fetchSong = async () => {
             try {
-                const res = await axios.get(`http://localhost:3000/api/songs/${id}`);
+                const res = await api.get(`/songs/${id}`);
                 const data = res.data;
                 setSong(data);
                 setHeaderLiked(false);
@@ -129,7 +129,7 @@ export default function Cart() {
     useEffect(() => {
         const fetchAllSongs = async () => {
             try {
-                const res = await axios.get("http://localhost:3000/api/songs/get-songs");
+                const res = await api.get("/songs/get-songs");
                 setAllSongs(res.data);
             } catch (err) {
                 console.error("Failed to fetch all songs", err);
@@ -162,8 +162,8 @@ export default function Cart() {
 
         const fetchSongs = async () => {
             try {
-                const res = await axios.get(
-                    "http://localhost:3000/api/songs/get-songs"
+                const res = await api.get(
+                    "/songs/get-songs"
                 );
 
                 const filtered = res.data.filter(song =>

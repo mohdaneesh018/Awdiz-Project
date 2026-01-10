@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
-import axios from "axios";
+import { useParams, useNavigate } from "react-router-dom"; 
 import SellerLayout from "./SellerLayout";
 import toast from "react-hot-toast";
 import "../styles/editSong.css";
+import api from "../utils/AxiosInstance";
 
 const EditSong = () => {
   const { id } = useParams();
@@ -16,8 +16,8 @@ const EditSong = () => {
   useEffect(() => {
     const fetchSong = async () => {
       try {
-        const res = await axios.get(
-          `http://localhost:3000/api/seller/song/${id}`,
+        const res = await api.get(
+          `/seller/song/${id}`,
           { withCredentials: true }
         );
 
@@ -52,8 +52,8 @@ const EditSong = () => {
         fd.append("audio", newAudio);
       }
 
-      await axios.put(
-        `http://localhost:3000/api/seller/update-song/${id}`,
+      await api.put(
+        `/seller/update-song/${id}`,
         fd,
         { withCredentials: true }
       );

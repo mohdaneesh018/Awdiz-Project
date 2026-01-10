@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useEffect, useState } from "react"; 
 import SellerLayout from "./SellerLayout";
 import toast from "react-hot-toast";
 import "../styles/profile.css";
 import { useNavigate } from "react-router-dom";
+import api from "../utils/AxiosInstance";
 
 const Profile = () => {
     const [user, setUser] = useState(null);
@@ -14,8 +14,8 @@ const Profile = () => {
 
     useEffect(() => {
         const fetchUser = async () => {
-            const res = await axios.get(
-                "http://localhost:3000/api/auth/me",
+            const res = await api.get(
+                "/auth/me",
                 { withCredentials: true }
             );
 
@@ -29,8 +29,8 @@ const Profile = () => {
 
     const updateProfile = async () => {
         try {
-            await axios.put(
-                "http://localhost:3000/api/auth/update-profile",
+            await api.put(
+                "/auth/update-profile",
                 { name, email },
                 { withCredentials: true }
             );

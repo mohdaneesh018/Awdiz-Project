@@ -1,8 +1,8 @@
-import { useState } from "react";
-import axios from "axios";
+import { useState } from "react"; 
 import toast from "react-hot-toast";
 import SellerLayout from "./SellerLayout";
 import { useNavigate } from "react-router-dom"; 
+import api from "../utils/AxiosInstance";
 
 const Settings = () => {
     const [oldPassword, setOld] = useState("");
@@ -12,8 +12,8 @@ const Settings = () => {
 
     const changePassword = async () => {
         try {
-            await axios.put(
-                "http://localhost:3000/api/auth/change-password",
+            await api.put(
+                "/auth/change-password",
                 { oldPassword, newPassword },
                 { withCredentials: true }
             );

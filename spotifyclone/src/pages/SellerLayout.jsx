@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
 import "../styles/SellerLayout.css";
+import api from "../utils/AxiosInstance";
 
 const SellerLayout = ({ children }) => {
   const [open, setOpen] = useState(false);
@@ -10,8 +10,8 @@ const SellerLayout = ({ children }) => {
 
   const doLogout = async () => {
     try {
-      await axios.post(
-        "http://localhost:3000/api/auth/logout",
+      await api.post(
+        "/auth/logout",
         {},
         { withCredentials: true }
       );
