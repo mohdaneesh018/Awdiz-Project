@@ -25,20 +25,29 @@ const Login = () => {
       );
 
       if (res.data.success) {
-        if (res.data.user.role === "seller") {
+ 
+        localStorage.setItem(
+          "user",
+          JSON.stringify(res.data.user)
+        );
+ 
+        if (res.data.user.role === "admin") {
+          router("/admin/dashboard");
+        } else if (res.data.user.role === "seller") {
           router("/seller/dashboard");
         } else {
           router("/");
         }
-      }
 
-      toast.success("Login Successful!");
+        toast.success("Login Successful!");
+      }
 
     } catch (err) {
       toast.error(err.response?.data?.message || "Login failed");
       console.log(err);
     }
   };
+
 
   return (
     <div className="login-container">

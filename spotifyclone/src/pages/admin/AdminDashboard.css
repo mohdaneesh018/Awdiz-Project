@@ -1,0 +1,104 @@
+/* MAIN LAYOUT */
+.admin-layout {
+    display: flex;
+    height: 100vh;  
+    background: #000;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.admin-sidebar {
+    width: 220px;
+    background: #111;
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.admin-sidebar h2 {
+    margin-bottom: 25px;
+    font-size: 22px;
+    color: #1db954;
+}
+
+.admin-sidebar button {
+    background: transparent;
+    border: none;
+    color: #aaa;
+    font-size: 16px;
+    text-align: left;
+    cursor: pointer;
+    padding: 8px 0;
+}
+
+.admin-sidebar button:hover {
+    color: white;
+}
+
+.admin-sidebar button.active {
+    color: #1db954;
+    font-weight: bold;
+}
+
+.admin-content {
+    flex: 1;
+    padding: 30px;
+    overflow-y: auto;
+}
+
+.content-box {
+    background: #181818;
+    border-radius: 20px;
+    padding: 25px;
+}
+
+.content-box h2 {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #222;
+    padding: 12px 18px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+}
+
+.row span {
+    font-size: 15px;
+}
+
+.row button {
+    background: red;
+    color: white;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.row button:hover {
+    background: darkred;
+}
+
+@media (max-width: 480px) {
+  .admin-layout {
+    flex-direction: column;
+  }
+
+  .admin-sidebar {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .admin-content {
+    padding: 15px;
+  }
+}

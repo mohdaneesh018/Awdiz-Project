@@ -707,7 +707,7 @@
     color: #b3b3b3;
 }
 
-#icon-container {
+#icon-containers {
     width: 190px;
     height: 180px;
     margin: 0px 0px 40px;
@@ -715,7 +715,7 @@
     display: flex;
 }
 
-#icon-container a {
+#icon-containers a {
     color: #b3b3b3;
     height: 40px;
     width: 40px;
@@ -730,7 +730,7 @@
     transition: 0.3s;
 }
 
-#icon-container a:hover {
+#icon-containers a:hover {
     color: white;
 }
 
@@ -857,5 +857,14 @@
     #navbar3 {
         height: 140px;
         margin-bottom: 10px;
+    }
+
+    #icon-containers {
+        margin-left: 40%;
+        height: auto;
+    }
+
+    #copyRight {
+        display: none;
     }
 }

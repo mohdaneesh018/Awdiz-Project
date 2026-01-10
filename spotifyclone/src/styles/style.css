@@ -751,7 +751,7 @@
         gap: 10px;
     }
 
-    #headerSection1 img { 
+    #headerSection1 img {
         height: 50px;
         width: 40px;
     }
@@ -770,7 +770,7 @@
         display: block;
         height: 20px;
         width: 20px;
-        margin-top: 4px;
+        margin-top: 4px;  
     }
 
     #headerPrem,
@@ -798,7 +798,6 @@
     #headerLog button {
         font-size: 13px;
         border-radius: 30px;
-        margin-left: 10px;
     }
 
     #body {
@@ -811,10 +810,10 @@
 
     #bodyRight {
         width: 100%;
-        margin-left: 0;
+        margin-left: 0; 
         margin-top: 0;
-        padding: 16px;
-        height: auto;
+        margin-bottom: 0;
+        padding: 16px; 
         overflow: visible !important;
     }
 
@@ -963,7 +962,8 @@
     }
 
     #icon-container {
-        margin-left: 0;
+        margin-left: 50%;
+        height: auto;
     }
 
     #copyRight {
@@ -981,7 +981,7 @@
     #bodyRight,
     main {
         height: auto !important;
-        min-height: 100vh !important;
+        /* min-height: 100vh !important; */
         overflow-y: auto !important;
         overflow-x: hidden !important;
         overflow: visible !important;

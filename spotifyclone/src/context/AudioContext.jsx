@@ -12,22 +12,28 @@ export default function AudioProvider({ children }) {
     const [playlist, setPlaylist] = useState([]);
     const [currentIndex, setCurrentIndex] = useState(0);
 
+    const resetAudio = () => {
+        const audio = audioRef.current;
+        audio.pause();
+        audio.currentTime = 0;
+    };
+
     const togglePlay = async () => {
-        if (!audioRef.current.src) return;
+        const audio = audioRef.current;
+        if (!audio.src) return;
 
         try {
             if (isPlaying) {
-                audioRef.current.pause();
+                audio.pause();
                 setIsPlaying(false);
             } else {
-                await audioRef.current.play();
+                await audio.play();
                 setIsPlaying(true);
             }
         } catch (err) {
             console.log("Toggle play blocked:", err.message);
         }
     };
-
 
     const playSong = async (song) => {
         if (!song?.audioUrl) return;
@@ -40,9 +46,8 @@ export default function AudioProvider({ children }) {
         try {
             const audio = audioRef.current;
 
-            audio.pause();
+            resetAudio(); // 🔥 IMPORTANT FIX
             audio.src = song.audioUrl;
-
             await audio.play();
 
             setCurrentSong(song);
@@ -58,14 +63,13 @@ export default function AudioProvider({ children }) {
     };
 
     const playPlaylist = async (songs, startIndex = 0) => {
-        if (!songs || songs.length === 0) return;
+        if (!songs?.length) return;
 
         try {
             const audio = audioRef.current;
 
-            audio.pause();
+            resetAudio(); // 🔥 FIX
             audio.src = songs[startIndex].audioUrl;
-
             await audio.play();
 
             setPlaylist(songs);
@@ -87,9 +91,8 @@ export default function AudioProvider({ children }) {
             const nextIndex = currentIndex + 1;
             const audio = audioRef.current;
 
-            audio.pause();
+            resetAudio(); // 🔥 FIX
             audio.src = playlist[nextIndex].audioUrl;
-
             await audio.play();
 
             setCurrentIndex(nextIndex);

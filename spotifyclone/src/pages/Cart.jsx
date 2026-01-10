@@ -522,7 +522,7 @@ export default function Cart() {
                                 </div>
 
                                 <div id="icons">
-                                    <div id="icon-container">
+                                    <div id="icon-containers">
                                         <a href="https://instagram.com/yourprofile" target="_blank">
                                             <i class="fa-brands fa-instagram"></i>
                                         </a>

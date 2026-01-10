@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 const Profile = () => {
     const [user, setUser] = useState(null);
     const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
 
     const navigate = useNavigate();
 
@@ -17,9 +18,12 @@ const Profile = () => {
                 "http://localhost:3000/api/auth/me",
                 { withCredentials: true }
             );
+
             setUser(res.data.user);
             setName(res.data.user.name);
+            setEmail(res.data.user.email);
         };
+
         fetchUser();
     }, []);
 
@@ -27,14 +31,14 @@ const Profile = () => {
         try {
             await axios.put(
                 "http://localhost:3000/api/auth/update-profile",
-                { name },
+                { name, email },
                 { withCredentials: true }
             );
 
             toast.success("Profile updated!");
 
             setTimeout(() => {
-                navigate("/seller/dashboard")
+                navigate("/seller/dashboard");
             }, 1500);
 
         } catch (err) {
@@ -42,7 +46,7 @@ const Profile = () => {
         }
     };
 
-    if (!user) return <SellerLayout>Loading....</SellerLayout>;
+    if (!user) return <SellerLayout>Loading...</SellerLayout>;
 
     return (
         <SellerLayout>
@@ -57,7 +61,10 @@ const Profile = () => {
                     />
 
                     <label>Email:</label>
-                    <input value={user.email} readOnly />
+                    <input
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
 
                     <button onClick={updateProfile}>
                         Save Changes

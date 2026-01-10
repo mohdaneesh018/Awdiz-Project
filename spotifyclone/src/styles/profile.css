@@ -40,13 +40,17 @@
   }
 
   .profile-page h1 {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .profile-box { 
     padding: 14px;
     width: 200px;
     border-radius: 8px;  
+  }
+
+  .profile-box label {
+    font-size: 13px;
   }
 
   .profile-box input {
