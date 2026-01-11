@@ -87,6 +87,8 @@ const MySongs = () => {
   return (
     <SellerLayout>
       <div className="mysongs-header">
+        
+        {/* My Songs Page */}
         <h1 className="mysongs-title">My Songs</h1>
 
         <div className="mysongs-tools">
