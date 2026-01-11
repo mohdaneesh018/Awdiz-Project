@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react"; 
+import { useEffect, useRef, useState } from "react";
 import SellerLayout from "../pages/SellerLayout";
 import "../styles/MySongs.css";
 import toast from "react-hot-toast";
@@ -148,7 +148,7 @@ const MySongs = () => {
                   src={
                     song.audioUrl?.startsWith("http")
                       ? song.audioUrl
-                      : `http://localhost:3000${song.audioUrl}`
+                      : `https://spotify-project-backend-4q2h.onrender.com${song.audioUrl}`
                   }
                   className="song-audio"
                 />

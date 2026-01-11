@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom"; 
+import { useParams, useNavigate } from "react-router-dom";
 import SellerLayout from "./SellerLayout";
 import toast from "react-hot-toast";
 import "../styles/editSong.css";
@@ -110,13 +110,13 @@ const EditSong = () => {
                   src={
                     form.audioUrl.startsWith("http")
                       ? form.audioUrl
-                      : `http://localhost:3000${form.audioUrl}`
+                      : `https://spotify-project-backend-4q2h.onrender.com${form.audioUrl}`
                   }
                 />
               )}
             </div>
           </div>
- 
+
           <input
             type="file"
             accept="audio/*"
