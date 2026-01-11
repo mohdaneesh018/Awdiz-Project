@@ -42,6 +42,7 @@ export default function Artist() {
     }
 
     return (
+    // Artist Page 
         <div className="artist-page">
 
             <div className="artist-header">
