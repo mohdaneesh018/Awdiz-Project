@@ -2,7 +2,7 @@ import axios from "axios";
 
 const api = axios.create({
 //   baseURL: import.meta.env.VITE_BACKEND_API,
-baseURL: "http://localhost:3000/api",
+baseURL: "https://spotify-project-backend-4q2h.onrender.com/api",
   withCredentials: true,
 });
 
