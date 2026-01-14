@@ -1,18 +1,26 @@
 import axios from "axios";
 
 const api = axios.create({
-//   baseURL: import.meta.env.VITE_BACKEND_API,
-baseURL: "https://spotify-project-backend-4q2h.onrender.com/api",
-  withCredentials: true,
+  baseURL: "https://spotify-project-backend-4q2h.onrender.com/api",
 });
 
-// OPTIONAL: auto-handle 401 (expired token)z
-// If user token expires → auto logout
+// 🔥 Automatically attach token in header
+api.interceptors.request.use((config) => {
+  const token = localStorage.getItem("token");
+
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+
+  return config;
+});
+
 api.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error?.response?.status === 401) {
-      console.warn("Unauthorized → clearing stale cookie"); 
+      console.warn("Unauthorized → token expired");
+      localStorage.removeItem("token");
     }
     return Promise.reject(error);
   }

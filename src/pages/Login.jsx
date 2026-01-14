@@ -1,4 +1,4 @@
-import { useState } from "react"; 
+import { useState } from "react";
 import "../styles/login.css";
 import { Link, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
@@ -18,19 +18,19 @@ const Login = () => {
 
   const handleSubmit = async () => {
     try {
-      const res = await api.post(
-        "/auth/login",
-        form,
-        { withCredentials: true }
-      );
+      const res = await api.post("/auth/login", form);
 
       if (res.data.success) {
- 
+
+        // ✅ save token
+        localStorage.setItem("token", res.data.token);
+
+        // ✅ save user
         localStorage.setItem(
           "user",
           JSON.stringify(res.data.user)
         );
- 
+
         if (res.data.user.role === "admin") {
           router("/admin/dashboard");
         } else if (res.data.user.role === "seller") {
@@ -47,7 +47,6 @@ const Login = () => {
       console.log(err);
     }
   };
-
 
   return (
     <div className="login-container">
