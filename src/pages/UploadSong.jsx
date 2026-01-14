@@ -1,4 +1,4 @@
-import { useState } from "react"; 
+import { useState } from "react";
 import SellerLayout from "../pages/SellerLayout";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
@@ -32,7 +32,12 @@ const UploadSong = () => {
       await api.post(
         "/seller/upload-song",
         formData,
-        { withCredentials: true }
+        {
+          withCredentials: true,
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
       );
 
       toast.success("Song uploaded successfully!");
@@ -51,7 +56,7 @@ const UploadSong = () => {
     <SellerLayout>
       <h1 className="upload-name">Upload Song</h1>
 
-      <div className="upload-top"> 
+      <div className="upload-top">
         <div className="upload-field">
           <label className="upload-label">Song Title</label>
           <input
@@ -60,7 +65,7 @@ const UploadSong = () => {
             onChange={(e) => setTitle(e.target.value)}
           />
         </div>
- 
+
         <div className="upload-field">
           <label className="upload-label">Artist</label>
           <select
@@ -78,7 +83,7 @@ const UploadSong = () => {
             <option value="anirudh-ravichander">Anirudh Ravichander</option>
           </select>
         </div>
- 
+
         <div className="upload-field">
           <label className="upload-label">Album Cover URL</label>
           <input
@@ -87,7 +92,7 @@ const UploadSong = () => {
             onChange={(e) => setImageUrl(e.target.value)}
           />
         </div>
- 
+
         <div className="upload-field">
           <label className="upload-label">Audio File</label>
           <input
@@ -104,7 +109,7 @@ const UploadSong = () => {
             </p>
           )}
         </div>
- 
+
         {audioFile && (
           <div className="upload-audio-preview">
             <audio
@@ -114,14 +119,14 @@ const UploadSong = () => {
             />
           </div>
         )}
- 
+
         {imageUrl && (
           <div className="upload-image-preview">
             <h4 className="upload-preview-title">Album Preview</h4>
             <img className="upload-preview-img" src={imageUrl} alt="" />
           </div>
         )}
- 
+
         <button
           className={`upload-btn ${loading ? "upload-btn-disabled" : ""}`}
           onClick={handleSubmit}
